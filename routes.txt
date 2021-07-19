@@ -1,0 +1,86 @@
+User :
+    Post
+    -Register
+    -username, role, password
+    -store only users those are authenticated by LDAP
+    
+    Get
+    -Fetch User Role(Participant/Admin) using username
+    -Fetch one using ID, fetch all
+    
+ 
+
+Assignment
+ 
+
+    Post
+    -Add assignment
+        Title,description,input format,output format,test cases, score
+    
+    -GET
+        -Fetch assignments from the database
+        -Fetch one using ID, fetch all
+
+    -DEL 
+        -Delete assignment using assignment ID
+    
+    -UPDATE
+        -update assignment using assignment ID 
+
+
+
+Track
+    POST 
+        -to add a track, (trackname, skillset test)
+    
+    GET 
+        -Get all tracks
+
+    DELETE
+        -delete a track using ID
+
+
+
+Skillset test
+    POST 
+        -add a skillset test (title, assignments)
+
+    GET 
+        -get all skilllset tests
+
+    DELETE 
+        -delete a track using ID
+
+
+
+Test
+    POST 
+        -add a test to DB
+        -(title, tracks[], participants[],duration,score)
+
+    GET 
+        -get a single test 
+        -get all tests 
+
+    DELETE 
+        -delete a test
+
+    UPDATE 
+        -update a test using ID
+
+
+Scoreboard
+    POST 
+        -Add scoreboard list to DB
+
+    GET 
+        -GET a test specific scoreboard
+
+
+UserResult
+    POST 
+        -result from api is stored in a user and assignment specific collection
+        -while updating a new high score, get the recent score array and append new score to it
+
+    GET 
+        -get a user and assignment specific result

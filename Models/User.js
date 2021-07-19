@@ -11,9 +11,8 @@ const UserSchema = new mongoose.Schema({
     default: "Participant",
     required: true,
   },
-  email: {
-    type: email,
-    unique: true,
+  password: {
+    type: String,
     required: true,
   },
 });
