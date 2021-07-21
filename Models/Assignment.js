@@ -20,6 +20,10 @@ const AssignmentSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  projectID: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = Assignment = mongoose.model("Assignment", AssignmentSchema);
