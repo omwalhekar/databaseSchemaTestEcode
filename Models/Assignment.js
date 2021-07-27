@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-
-const AssignmentSchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
+const AssignmentSchema = new Schema({
   title: {
     type: String,
     required: true,
@@ -18,10 +18,6 @@ const AssignmentSchema = new mongoose.Schema({
   ],
   score: {
     type: Number,
-    required: true,
-  },
-  projectID: {
-    type: String,
     required: true,
   },
 });

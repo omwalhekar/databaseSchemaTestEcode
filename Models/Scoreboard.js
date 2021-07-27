@@ -3,8 +3,8 @@
 // particular test can be fetched or updated
 
 const mongoose = require("mongoose");
-
-const ScoreboardSchema = new mongoose.Schema([
+const Schema = mongoose.Schema;
+const ScoreboardSchema = new Schema([
   {
     testId: Schema.Types.ObjectId,
     scoreboard: [

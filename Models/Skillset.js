@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const skillsetSchema = new mongoose.Schema({
+const skillsetSchema = new Schema({
   title: {
     type: String,
     unique: true,

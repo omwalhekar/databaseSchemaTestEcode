@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
-
-const TestSchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
+const TestSchema = new Schema({
   title: {
     type: String,
     required: true,
   },
-  tracks: [Schema.Types.ObjectId],
+  tracks: [Schema.Types.ObjectId], //add name and skillsets
   participants: [
     {
       username: {

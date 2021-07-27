@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-
-const UserResultSchema = new mongoose.Schema([
+const Schema = mongoose.Schema;
+const UserResultSchema = new Schema([
   {
     userID: { type: String, required: true },
     assignments: [
