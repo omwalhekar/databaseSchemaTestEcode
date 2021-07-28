@@ -34,6 +34,20 @@ router.get("/", async (req, res) => {
   }
 });
 
+//GET A SKILLSET
+router.get("/:id", async (req, res) => {
+  try {
+    const skillset = await Skillset.findOne({ _id: req.params.id });
+    if (skillset) {
+      return res.json(skillset);
+    }
+    res.status(404).json({ msg: "No Skillset Found" });
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).json({ msg: error.message });
+  }
+});
+
 //DELETE ROUTE
 //DELETE SKILLSET
 router.delete("/:id", async (req, res) => {

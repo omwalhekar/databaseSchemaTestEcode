@@ -35,7 +35,21 @@ router.get("/", async (req, res) => {
     res.status(500).json({ msg: error.message });
   }
 });
-module.exports = router;
+
+// GET ROUTE
+// GET A TEST
+router.get("/:id", async (req, res) => {
+  try {
+    const test = await Test.findOne({ _id: req.params.id });
+    if (test) {
+      return res.json(test);
+    }
+    res.status(404).json({ msg: "No Test Found" });
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).json({ msg: error.message });
+  }
+});
 
 // DELETE A TEST
 router.delete("/:id", async (req, res) => {
@@ -50,3 +64,5 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json({ msg: error.message });
   }
 });
+
+module.exports = router;

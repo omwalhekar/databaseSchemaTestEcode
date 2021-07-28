@@ -6,7 +6,12 @@ const TestSchema = new Schema({
     required: true,
     unique: true,
   },
-  tracks: [Schema.Types.ObjectId], //add name and skillsets
+  tracks: [
+    {
+      trackName: { type: String, required: true },
+      skillSets: [Schema.Types.ObjectId],
+    },
+  ], //add name and skillsets
   participants: [
     {
       username: {
