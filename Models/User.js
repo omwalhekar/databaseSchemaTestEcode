@@ -11,10 +11,7 @@ const UserSchema = new Schema({
     default: "Participant",
     required: true,
   },
-  password: {
-    type: String,
-    required: true,
-  },
+  tests: [Schema.Types.ObjectId],
 });
 
 module.exports = User = mongoose.model("User", UserSchema);
