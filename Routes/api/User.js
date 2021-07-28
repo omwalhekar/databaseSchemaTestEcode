@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
   try {
     const users = await User.find();
     if (!users) {
-      return res.json({ msg: "No users found" });
+      return res.status(404).json({ msg: "No users found" });
     }
     res.json(users);
   } catch (error) {
@@ -37,7 +37,7 @@ router.delete("/:id", async (req, res) => {
   try {
     const response = await User.findByIdAndDelete({ _id: req.params.id });
     if (!response) {
-      return res.json({ msg: "No user found" });
+      return res.status(404).json({ msg: "No user found" });
     }
     res.json({ msg: "User Deleted" });
   } catch (error) {

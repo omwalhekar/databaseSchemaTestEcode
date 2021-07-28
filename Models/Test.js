@@ -4,15 +4,12 @@ const TestSchema = new Schema({
   title: {
     type: String,
     required: true,
+    unique: true,
   },
   tracks: [Schema.Types.ObjectId], //add name and skillsets
   participants: [
     {
       username: {
-        type: String,
-        required: true,
-      },
-      email: {
         type: String,
         required: true,
       },

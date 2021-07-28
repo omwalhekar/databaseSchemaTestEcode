@@ -37,7 +37,10 @@ router.get("/", async (req, res) => {
 //DELETE TRACK
 router.delete("/:id", async (req, res) => {
   try {
-    await Track.findByIdAndDelete(req.params.id);
+    const response = await Track.findByIdAndDelete(req.params.id);
+    if (!response) {
+      return res.status(404).json({ msg: "No Track Found" });
+    }
     res.json({ msg: "Track deleted" });
   } catch (error) {
     console.error(error.message);

@@ -40,7 +40,7 @@ router.delete("/:id", async (req, res) => {
   try {
     const response = await Skillset.findByIdAndDelete(req.params.id);
     if (!response) {
-      return res.json({ msg: "Skillset not found" });
+      return res.status(404).json({ msg: "Skillset not found" });
     }
     res.json({ msg: "Skillset deleted" });
   } catch (error) {

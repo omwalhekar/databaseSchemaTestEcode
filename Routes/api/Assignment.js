@@ -55,7 +55,10 @@ router.get("/:id", async (req, res) => {
 //DELETE ASSIGNMENT
 router.delete("/:id", async (req, res) => {
   try {
-    await Assignment.findByIdAndDelete(req.params.id);
+    const response = await Assignment.findByIdAndDelete(req.params.id);
+    if (!response) {
+      return res.status(404).json({ msg: "No Assignment found" });
+    }
     res.json({ msg: "Assignment deleted" });
   } catch (error) {
     console.error(error.message);

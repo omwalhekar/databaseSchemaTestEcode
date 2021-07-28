@@ -12,6 +12,7 @@ app.use("/assignment", require("./routes/api/Assignment"));
 app.use("/track", require("./routes/api/Track"));
 app.use("/skillset", require("./routes/api/Skillset"));
 app.use("/user", require("./routes/api/User"));
+app.use("/test", require("./routes/api/Test"));
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
